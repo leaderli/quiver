@@ -1,0 +1,35 @@
+{
+  "title": "aware",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 10px auto;\">Spring的依赖注入的最大亮点就是你所有的<font color=\"#000000\">Bean对Spring容器的存在是没有意识的。即你可以将你的容器替换成别的容器，例如Goggle Guice,这时Bean之间的耦合度很低。</font></p><p style=\"margin: 10px auto;\">但是在实际的项目中，我们不可避免的要用到<font color=\"#000000\">Spring容器本身的功能资源，这时候Bean必须要意识到Spring容器的存在，才能调用Spring所提供的资源，这就是所谓的Spring&nbsp;Aware。其实Spring&nbsp;Aware本来就是Spring设计用来框架内部使用的，若使用了Spring&nbsp;Aware，你的Bean将会和Spring框架耦合</font></p>"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\"><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">先举个</span><code style=\"box-sizing: border-box; color: rgb(199, 37, 78); background-color: rgb(246, 246, 246); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; padding: 2px 4px; border: none; white-space: pre-wrap; vertical-align: middle;\">BeanNameAware</code><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">的例子，实现</span><code style=\"box-sizing: border-box; color: rgb(199, 37, 78); background-color: rgb(246, 246, 246); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; padding: 2px 4px; border: none; white-space: pre-wrap; vertical-align: middle;\">BeanNameAware</code><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">接口，可以让该</span><code style=\"box-sizing: border-box; color: rgb(199, 37, 78); background-color: rgb(246, 246, 246); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; padding: 2px 4px; border: none; white-space: pre-wrap; vertical-align: middle;\">Bean</code><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">感知到自身的</span><code style=\"box-sizing: border-box; color: rgb(199, 37, 78); background-color: rgb(246, 246, 246); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; padding: 2px 4px; border: none; white-space: pre-wrap; vertical-align: middle;\">BeanName</code><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">（对应Spring容器的</span><code style=\"box-sizing: border-box; color: rgb(199, 37, 78); background-color: rgb(246, 246, 246); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; padding: 2px 4px; border: none; white-space: pre-wrap; vertical-align: middle;\">BeanId</code><span style=\"color: rgb(47, 47, 47); background-color: rgb(255, 255, 255);\">属性）</span></font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public interface BeanNameAware extends Aware {\n  void setBeanName(String name);\n}\n"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public class Config implements BeanNameAware {\n   @Override\n  public void setBeanName(String name) {\n    System.out.println(name);\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<font color=\"#808081\">上述示例，当每次实例化Config时，调用setBeanName，name为Config的在spring容器中的id</font>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\">所以BeanNameAware接口是为了让自身Bean能够感知到，获取到自身在Spring容器中的id属性。</font></div><div><font face=\"Menlo\">同理，其他的Aware接口也是为了能够感知到自身的一些属性。</font></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\" size=\"2\" color=\"#a9a9a9\">1、ApplicationContextAware &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 能获取Application Context调用容器的服务</font></div><div><font face=\"Menlo\" size=\"2\" color=\"#a9a9a9\">2、BeanNameAware &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 提供对BeanName进行操作</font></div><div><font face=\"Menlo\" size=\"2\" color=\"#a9a9a9\">3、ApplicationEventPublisherAware &nbsp; &nbsp; &nbsp;主要用于事件的发布</font></div><div><font face=\"Menlo\" size=\"2\" color=\"#a9a9a9\">4、BeanClassLoadAware &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;相关的类加载器</font></div><div><font face=\"Menlo\" size=\"2\" color=\"#a9a9a9\">5、BeanFactoryAware &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;声明BeanFactory的</font></div>"
+    }
+  ]
+}

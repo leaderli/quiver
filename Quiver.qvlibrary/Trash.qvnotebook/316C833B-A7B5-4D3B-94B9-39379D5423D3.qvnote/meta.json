@@ -1,0 +1,14 @@
+{
+  "created_at" : 1544701457,
+  "tags" : [
+    "spring",
+    "java ",
+    "dynamic",
+    "DependsOn",
+    "bean",
+    "another"
+  ],
+  "title" : "动态注入bean 与依赖加载",
+  "uuid" : "316C833B-A7B5-4D3B-94B9-39379D5423D3",
+  "updated_at" : 1544701667
+}

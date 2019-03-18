@@ -1,0 +1,10 @@
+{
+  "title": "junit 断言异常",
+  "cells": [
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public class Student {\n\tpublic boolean canVote(int age) {\n   \t \tif (i<=0) throw new IllegalArgumentException(\"age should be +ve\");\n   \t \tif (i<18) return false;\n   \t \telse return true;\n\t}\n}\npublic class TestStudent{\n\n    @Rule\n    public ExpectedException thrown= ExpectedException.none();\n\n    @Test\n    public void canVote_throws_IllegalArgumentException_for_zero_age() {\n        Student student = new Student();\n        thrown.expect(IllegalArgumentException.class);\n        thrown.expectMessage(\"age should be +ve\");\n        student.canVote(0);\n    }\n}"
+    }
+  ]
+}

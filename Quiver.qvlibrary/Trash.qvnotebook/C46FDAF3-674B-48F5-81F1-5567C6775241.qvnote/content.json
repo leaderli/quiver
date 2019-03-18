@@ -1,0 +1,37 @@
+{
+  "title": "MessageConverter",
+  "cells": [
+    {
+      "type": "text",
+      "data": "配置"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Configuration\npublic class Config implements WebMvcConfigurer {\n\n\n  //添加额外的MessageConverter\n  @Override\n  public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {\n    converters.add(new PersonMessageConverter());\n  }\n  //重载复写MessageConverters\n  @Override\n  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {\n    converters.add(new PersonMessageConverter());\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "自定义MessageConverter"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public class PersonMessageConverter extends AbstractHttpMessageConverter<Person> {\n  public PersonMessageConverter() {\n    super(new MediaType(\"application\", \"person\", Charset.forName(\"utf-8\")));\n  }\n\n  @Override\n  protected boolean supports(Class<?> clazz) {\n    return Person.class.isAssignableFrom(clazz);\n  }\n\n  @Override\n  protected Person readInternal(Class<? extends Person> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {\n    String msg = StreamUtils.copyToString(inputMessage.getBody(), Charset.forName(\"utf-8\"));\n    String[] strings = msg.split(\"\\\\|\");\n    return new Person(strings[0], Integer.valueOf(strings[1]));\n  }\n\n  @Override\n  protected void writeInternal(Person person, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {\n    String msg = person.getName() + \"|\" + person.getAge();\n    outputMessage.getBody().write(msg.getBytes());\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "使用"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl -H \"Content-Type:application/person\" -X POST --data 'name|11' http://localhost:8080/person"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@RequestMapping(\"/person\")\n@ResponseBody\npublic Person person(@RequestBody Person person){//请求name|11 自动转化为person对象\n  return person;                                 //返回person对象 自动转换为name|11\n}"
+    }
+  ]
+}

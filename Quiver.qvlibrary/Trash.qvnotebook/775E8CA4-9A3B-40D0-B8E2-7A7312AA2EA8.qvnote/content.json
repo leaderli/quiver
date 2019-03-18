@@ -1,0 +1,61 @@
+{
+  "title": "command",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<br>"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\"><font color=\"#009051\">ag</font>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 文本搜索工具</font>"
+    },
+    {
+      "type": "text",
+      "data": "<div></div><div><font face=\"Menlo\"><font color=\"#009051\">bwm-ng</font> <span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;实时网速显示</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">enca</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t\t</span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;字符集转码</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">fzf</font> &nbsp;&nbsp;<span class=\"Apple-tab-span\" style=\"white-space:pre\">\t\t</span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;模糊搜索工具,进入fzf模式</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">ksdiff</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;diff工具 mergetool 用于合并代码</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">mdfind</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t\t</span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;spotlight搜索</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">ncdu</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;查看当前目录文件大小</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">brew rmtree</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>&nbsp; &nbsp; &nbsp; &nbsp; brew软件和卸载依赖</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">pandoc</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;markdown转换为doc，pdf等</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">more 1.txt|pbcopy</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>将文件内容复制到剪切板</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">pbpaste &gt;&gt; 1.txt</font><span class=\"Apple-tab-span\" style=\"white-space:pre\">\t</span>将剪切板内容复制到文件</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\"><font color=\"#009193\">d</font>&nbsp; &nbsp;当前session访问过的目录。输入cd -序号 即可跳转对应的目录</font>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

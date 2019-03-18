@@ -1,0 +1,9 @@
+{
+  "title": "iTerm2",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "**自动完成**\niTerm2 可以自动补齐命令，输入若干字符，按⌘+;弹出自动补齐窗口，列出曾经使用过的命令\n**分屏**\n垂直分屏：command + d\n水平分屏：command + shift + d\n切换屏幕：command + option + 方向键 command + [ 或 command + ]\n"
+    }
+  ]
+}

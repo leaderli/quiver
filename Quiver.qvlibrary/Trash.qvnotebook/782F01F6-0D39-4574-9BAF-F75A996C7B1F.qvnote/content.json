@@ -1,0 +1,17 @@
+{
+  "title": "problem",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.5986in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.5986in\">\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">生成javadoc\n中文乱码javadoc 工具加上参数</font></p>\n\n<p style=\"margin: 0in;\"><span style=\"font-family: Menlo; color: rgb(112, 48, 160);\">-encoding\nUTF-8 -charset UTF-8</span><span style=\"font-family: Menlo; color: rgb(112, 48, 160);\">&nbsp;</span></p>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">控制台(console)乱码</font></p>\n\n<p style=\"margin: 0in; color: rgb(112, 48, 160);\"><font face=\"Menlo\">java启动参数添加\n-Dfile.encoding=utf-8</font></p><p style=\"margin: 0in; color: rgb(112, 48, 160);\"><img src=\"quiver-image-url/A47524D72651C6BC20E8607FEB29D38E.jpg\" width=\"430\" height=\"282\"><font face=\"Menlo\"><br></font></p>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">idea&nbsp;<span style=\"background-color: white;\">jstl标签红色报错 是因为引入了jstl模版取消就可以了</span></font>\n\n<!--EndFragment-->"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "bash",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\">获取当前日期</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "dt=`date +'%Y-%m-%d'`\necho $dt"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\" color=\"#000000\">命令可以作为参数传入shell脚本中</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "echo $1\necho $2\n$1 $2"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">执行结果如下</font>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "sh test.sh echo fuck\necho\nfuck\nfuck"
+    }
+  ]
+}

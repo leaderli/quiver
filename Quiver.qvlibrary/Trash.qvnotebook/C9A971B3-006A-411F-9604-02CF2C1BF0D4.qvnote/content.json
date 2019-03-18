@@ -1,0 +1,14 @@
+{
+  "title": "xargs",
+  "cells": [
+    {
+      "type": "text",
+      "data": "引用参数"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls *.jar|xargs -I {} echo {}"
+    }
+  ]
+}

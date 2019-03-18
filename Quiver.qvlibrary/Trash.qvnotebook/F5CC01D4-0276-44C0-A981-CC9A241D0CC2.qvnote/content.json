@@ -1,0 +1,14 @@
+{
+  "title": "Class",
+  "cells": [
+    {
+      "type": "text",
+      "data": "判断class是否是另一个class的接口或抽象类或父类"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public void test(){\n  System.out.println(String.class.isAssignableFrom(Object.class));//false\n  System.out.println(Object.class.isAssignableFrom(String.class));//true\n}"
+    }
+  ]
+}

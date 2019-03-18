@@ -1,0 +1,41 @@
+{
+  "title": "spring配置文件",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\">spring初始化map与项目中使用</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "xml",
+      "data": "<util:map id=\"map\" scope=\"prototype\" key-type=\"java.lang.String\" value-type=\"java.lang.String\" map-class=\"java.util.HashMap\">\n      <entry key=\"key1\" value=\"123\"></entry>\n      <entry key=\"key2\" value=\"456\"></entry>\n</util:map>"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><span lang=\"zh-CN\">在spring</span><span lang=\"en-US\">4.3版本之后可以直接使用</span><span style=\"color: rgb(0, 176, 80);\" lang=\"en-US\">@Autowired</span></font></p>\n\n<p style=\"margin: 0in; color: rgb(0, 112, 192);\"><font face=\"Menlo\">低版本的&nbsp;</font><span style=\"font-family: Menlo; color: rgb(0, 176, 80); background-color: rgb(239, 240, 241);\">@Resource</span><span style=\"font-family: Menlo; color: rgb(48, 51, 54); background-color: rgb(239, 240, 241);\">(name=</span><span style=\"font-family: Menlo; color: rgb(125, 39, 39); background-color: rgb(239, 240, 241);\">\"AdditionalParams\"</span><span style=\"font-family: Menlo; color: rgb(48, 51, 54); background-color: rgb(239, 240, 241);\">) 或&nbsp;</span><span style=\"font-family: Menlo; color: rgb(0, 176, 80); background-color: rgb(239, 240, 241);\">@Value</span><span style=\"font-family: Menlo; color: rgb(48, 51, 54); background-color: rgb(239, 240, 241);\">(</span><span style=\"font-family: Menlo; color: rgb(125, 39, 39); background-color: rgb(239, 240, 241);\">\"#{AdditionalParams}\"</span><span style=\"font-family: Menlo; color: rgb(48, 51, 54); background-color: rgb(239, 240, 241);\">)</span></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "注入properties类"
+    },
+    {
+      "type": "code",
+      "language": "xml",
+      "data": "<util:properties id=\"sys\" location=\"classpath:config.properties\"/>"
+    },
+    {
+      "type": "text",
+      "data": "将配置文件注入到context中，配置文件格式可以是properties，yaml等，可通过<font color=\"#ff9300\">@Value(\"${...}\")</font>取值"
+    },
+    {
+      "type": "code",
+      "language": "xml",
+      "data": "  <context:property-placeholder location=\"classpath:config.properties\"/>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Configuration\n@PropertySource(\"classpath:config.yml\")\npublic class PropertiesWithJavaConfig {\n}"
+    }
+  ]
+}

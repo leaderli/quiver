@@ -1,0 +1,9 @@
+{
+  "title": "procreat",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:6.2548in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:6.2548in\"><ol><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">两指撤消</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">三指反向撤销</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">画线停住即可变直线</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">图层力两手右滑锁定不透明度，在锁定图层上换色涂抹</span><span style=\"font-size: 11pt;\">,</span><span style=\"font-size: 11pt;\">仅对当前图层元素有影响</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">两指单击图层，在画板上左右移动调整透明度</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">选区后，新建图层，可只在选</span><span style=\"font-size: 11pt;\">­</span><span style=\"font-size: 11pt;\">区里绘画</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">长按图层，托到画布，即复制图层</span><br></font></li><li><font face=\"Menlo\"><span style=\"font-size: 11pt;\">长按颜色，最近一个颜色</span><br></font></li><li><span style=\"font-size: 11pt;\"><font face=\"Menlo\">蒙板 黑色擦除白色恢复</font></span><br></li></ol>\n\n<ul style=\"margin-left:.3402in;direction:ltr;unicode-bidi:embed;margin-top:\n 0in;margin-bottom:0in\"><ol type=\"1\" style=\"margin-left: 0.375in; direction: ltr; unicode-bidi: embed; margin-top: 0in; margin-bottom: 0in; font-family: 'Microsoft YaHei'; font-size: 11pt;\">\n </ol>\n</ul>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+    }
+  ]
+}

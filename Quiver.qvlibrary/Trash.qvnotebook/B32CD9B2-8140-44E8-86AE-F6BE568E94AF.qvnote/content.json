@@ -1,0 +1,10 @@
+{
+  "title": "element of array at index",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "a=(a b c)\necho ${a[2]} #b"
+    }
+  ]
+}

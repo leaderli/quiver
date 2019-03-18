@@ -1,0 +1,37 @@
+{
+  "title": "useful command",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>To backup httpd.conf to httpd.conf.bak:</div><div></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "cp httpd.conf{,.bak}"
+    },
+    {
+      "type": "text",
+      "data": "<div>To revert the file from httpd.conf.bak to httpd.conf:</div><div></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mv http.conf{.bak,}"
+    },
+    {
+      "type": "text",
+      "data": "<div>To rename the file with prefix \"old\"</div><div></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "cp exampleFile old-!#ˆ"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "!find    #执行上条以find开头的命令\n!2044    #历史纪录中2044是执行的第n条命令\n!?name?  #执行上一条包含关键字的命令"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "spring注解",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in; font-size: 15px;\" lang=\"zh-CN\"><font face=\"Menlo\"><span style=\"font-weight: bold;\">EL</span><span style=\"font-weight: bold;\">表达式</span></font></p>\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\">注解的值部分支持使用EL表达式</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Menlo\"><font color=\"#009051\">@RestController</font> 是@Controller 和 @ResponseBody 的组合</font></div><div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">@RequestMapping 中produces可定制返回的responce的媒体类型和字符&nbsp;</font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@ResponseBody\n@RequestMapping(value = \"/load\", produces = \"text/html;charset=utf-8\")\npublic Object load() {\n  return \"测试中文返回\";\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div><div><font face=\"Menlo\"><font color=\"#009051\">@PathVariable</font> &nbsp;接受路径参数 &nbsp; /demo/xxx路径参数中如果带\".\"，后面的值会被忽略，通过以下方法解决,低版本spring不支持</font></div></div>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;\n\npublic class MyConfig extends WebMvcConfigurationSupport {\n  @Override\n  protected void configurePathMatch(PathMatchConfigurer configurer) {\n    configurer.setUseSuffixPatternMatch(false);\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n\n<p style=\"margin: 0in;\"><!--StartFragment--><font face=\"Menlo\" color=\"#009051\">@Controlleradvice</font><font face=\"Menlo\" color=\"#000000\">(注解class)</font><span style=\"color: rgb(0, 0, 0); font-family: Menlo;\">主要使用</span><span style=\"font-family: Menlo;\"><font color=\"#009051\">@ExceptionHandler</font></span><span style=\"color: rgb(0, 0, 0); font-family: Menlo;\">(注解method)</span></p>\n\n\n\n\n\n\n"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.web.bind.annotation.ControllerAdvice;\nimport org.springframework.web.bind.annotation.ExceptionHandler;\nimport org.springframework.web.bind.annotation.ResponseBody;\nimport javax.servlet.http.HttpServletRequest;\n\n@ControllerAdvice\npublic class ExceptionAdvice {\n  @ResponseBody\n  @ExceptionHandler(Exception.class)\n  public String handle(HttpServletRequest request, Exception e) {\n    return \"ExceptionAdvice \" + e.getMessage();\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">全局控制所有controller的异常</font>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font color=\"#009051\">@EnableWebMvc</font></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font color=\"#009051\"></font></div><div><font face=\"Menlo\">1. 简单的页面转向，可不新建controller，可继承WebMvcConfigurerAdapter重写addViewControllers来简化配置</font></div><div><font face=\"Menlo\">&nbsp; &nbsp; <span style=\"background-color: rgb(235, 235, 235);\">java8直接&nbsp;<font color=\"#9437ff\"><span style=\"font-weight: bold;\">implements </span>WebMvcConfigurer</font><span style=\"color: rgb(0, 0, 0);\"> 即可</span></span></font></div><div><font face=\"Menlo\">2. 页面控制器 在配置类中注解@Bean，返回ViewResolver <font color=\"#ff2600\">映射的文件需要</font></font><font color=\"#ff2600\">addResourceHandlers中注册过的否则无法访问</font></div><div><font face=\"Menlo\">3.&nbsp;<span style=\"color: rgb(79, 79, 79); background-color: rgb(255, 255, 255);\">静态资源管理 类型xml配置中的</span><span style=\"background-color: rgb(255, 255, 255);\"><font color=\"#009051\">&lt;mvc:resources mapping=\"</font></span><font color=\"#009051\">/upload/**<span style=\"background-color: rgb(255, 255, 255);\">\" location=\"</span>upload/<span style=\"background-color: rgb(255, 255, 255);\">\"&gt;</span></font></font></div>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.ComponentScan;\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.web.servlet.config.annotation.EnableWebMvc;\nimport org.springframework.web.servlet.config.annotation.ViewControllerRegistry;\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;\nimport org.springframework.web.servlet.view.InternalResourceViewResolver;\n\n@EnableWebMvc\n@Configuration\n@ComponentScan(\"profile\")\npublic class MyConfig extends WebMvcConfigurerAdapter {\n  @Override\n  public void addViewControllers(ViewControllerRegistry registry) {\n    registry.addViewController(\"/hello\").setViewName(\"hello\");\n  }\n  @Override\n  public void addResourceHandlers(ResourceHandlerRegistry registry) {\n    registry.addResourceHandler(\"/page/**\").addResourceLocations(\"classpath:/page/\");\n  }\n\n  @Bean\n  public ViewResolver viewResolver() {\n    InternalResourceViewResolver resolver = new InternalResourceViewResolver();\n    resolver.setPrefix(\"/page/\");\n    resolver.setSuffix(\".html\");\n    return resolver;\n  }\n\n}"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">请求 <font color=\"#009051\">/hello</font> 自动链接到<font color=\"#009051\">/page/hello.html</font></font>"
+    }
+  ]
+}

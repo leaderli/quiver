@@ -1,0 +1,14 @@
+{
+  "title": "grep",
+  "cells": [
+    {
+      "type": "text",
+      "data": "ps grep进程时 过滤掉grep进程"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ps -ef|grep java|grep -v grep"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "crontab",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in; font-size: 15px;\" lang=\"zh-CN\"><font color=\"#ff9300\"><span style=\"font-family: Menlo; font-size: 14px;\">crontab</span><span style=\"font-family: Menlo; font-size: 14px;\">执行是不会加载当前用户的环境变量的，若脚本中有用到的环境变量，是需要先加载的</span></font></p><p style=\"margin: 0in; font-size: 15px;\" lang=\"zh-CN\"><font color=\"#ff9300\"><span style=\"font-family: Menlo; font-size: 14px;\"><br></span></font></p><p style=\"margin: 0in; font-size: 15px;\" lang=\"zh-CN\"><img src=\"quiver-image-url/9D385F4F894CFF48046286EF221A974A.png\" width=\"675\" height=\"487\" alt=\"Approach 1: \nSet each variable you need manually in your script. \nApproach 2: \nSource your profile: \n. $HOME/. bash_profile (or . \n$HOME/ .profile ) \n(You will usually find that the above file will source other files (e.g. —/.bashrc --&gt; /etc/bashrc --&gt; \n/etc/profile.d/*) - if not, you can source those as well.) \nApproach 3: \nSave your environment variables to a file (run as the desired user): \nenv &gt; /path/to/my_env.sh \nThen import via your cron script: \nenv — &amp; cat /path/to/my_env. \nApproach 4: \n/bin/sh \nIn some cases, you can set global cron variables in /etc/default/cron . There is an element of \nrisk to this however, as these will be set for all cron jobs. \" style=\"font-size: 14px;\"><span style=\"font-size: 14px;\">&nbsp; &nbsp;&nbsp;</span><br></p>\n\n\n\n\n\n<!--StartFragment-->\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:5.0416in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:5.0416in\">\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><b>新建定时任务</b></font></p>\n\n<p style=\"margin: 0in; color: rgb(127, 127, 127);\"><font face=\"Menlo\">键入\ncrontab -e 编辑crontab服务文件</font></p>\n\n<p style=\"margin: 0in; color: rgb(0, 176, 80);\"><font face=\"Menlo\">例如\n文件内容如下：</font></p>\n\n\n\n\n\n<!--StartFragment--><!--EndFragment-->\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": " 0,5 * * * * /bin/sh /home/admin/jiaoben/buy/deleteFile.sh "
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in; color: rgb(165, 165, 165);\"><span style=\"background-color: white;\" lang=\"en-US\"><font face=\"Menlo\">查看该用户下的crontab服务是否创建成功， 用 crontab -l 命令</font></span><span style=\"font-family: Merriweather; font-size: 11pt; background-color: white; background-position: initial initial; background-repeat: initial initial;\" lang=\"zh-CN\"> </span></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin:0in;font-family:Merriweather;font-size:11.0pt;color:#A5A5A5\"><span style=\"background:white\">\n\n\n\n\n\n\n</span></p><p style=\"margin: 0in;\"><!--StartFragment--><font face=\"Menlo\"><span style=\"font-weight: bold; background-color: white;\">启动crontab服务</span><!--EndFragment--></font></p><p style=\"margin: 0in; color: rgb(165, 165, 165);\"><span style=\"background:white\"><font face=\"Menlo\">一般启动服务用 /sbin/service crond start 若是根用户的cron服务可以用 sudo\nservice crond start， </font></span></p>\n\n<p style=\"margin: 0in; color: rgb(165, 165, 165);\"><span style=\"background-color: white;\"><font face=\"Menlo\">这里还是要注意 下 不同版本Linux系统启动的服务的命令也不同 ，像我的虚拟机里只需用 sudo\nservice cron restart 即可，若是在根用下直接键入service cron start就能启动服务</font></span></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">crond\n是linux用来定期执行程序的命令。当安装完成操作系统之后，默认便会启动此任务调度命令。</font></p>\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">crond命令<span style=\"color: red;\">每分钟</span>会定期检查是否有要执行的工作，如果有要执行的工作便会自动执行该工作。</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 15px;\">cron文件语法</span></font></p><p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 15px;\"></span></font></p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "分   小时    日    月    星期  command \n0-59  0-23  1-31  1-12  0-6       \n\n记住几个特殊符号的含义： \n*  代表取值范围内的数字 ， \n/  代表每 \n-  代表从~到~\n,  分开几个离散的数字"
+    },
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 15px;\"></span></font></p>\n\n<!--EndFragment-->"
+    }
+  ]
+}

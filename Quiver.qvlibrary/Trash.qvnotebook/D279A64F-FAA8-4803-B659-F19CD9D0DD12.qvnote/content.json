@@ -1,0 +1,23 @@
+{
+  "title": "command",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\">批量反编译jar包</p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls *.jar|xargs -I {} jadx {} -d src"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">导出jar包并生成自定义maven资源</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mvn clean package \nmvn install:install-file -DgroupId=li -DartifactId=common -Dversion=1.1  -Dfile=/Users/li/java/workspace/common/target/common-1.1.jar -Dpackaging=jar "
+    }
+  ]
+}

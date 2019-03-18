@@ -1,0 +1,36 @@
+{
+  "title": "vue",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>属性赋值多个参数</b></div>"
+    },
+    {
+      "type": "text",
+      "data": "dom元素的属性,可通过数组来进行赋值"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n  <div :class=\"classValues\">\n  test\n  </div>\n</div>"
+    },
+    {
+      "type": "markdown",
+      "data": "经过下属代码渲染后"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n      classValues:[]\n\n    },\n    mounted:function(){\n      this.classValues=['c1','c2','c3']\n    }\n})"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n  <div class=\"c1 c2 c3\">\n  test\n  </div>\n</div>"
+    },
+    {
+      "type": "markdown",
+      "data": "\n"
+    }
+  ]
+}

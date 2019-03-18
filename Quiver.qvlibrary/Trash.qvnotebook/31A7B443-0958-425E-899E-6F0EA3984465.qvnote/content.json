@@ -1,0 +1,23 @@
+{
+  "title": "curl",
+  "cells": [
+    {
+      "type": "text",
+      "data": "模拟json请求"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl -H \"Content-Type:application/json\" -X POST --data '{\"key\":\"value\"}' http://localhost:8080/"
+    },
+    {
+      "type": "text",
+      "data": "得到curl httpcode&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "response=$(curl --write-out %{http_code} --silent --output /dev/null servername)\necho $response"
+    }
+  ]
+}

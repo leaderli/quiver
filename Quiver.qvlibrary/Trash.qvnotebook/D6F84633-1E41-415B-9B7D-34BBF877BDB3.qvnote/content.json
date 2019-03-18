@@ -1,0 +1,45 @@
+{
+  "title": "generics",
+  "cells": [
+    {
+      "type": "text",
+      "data": "void类型的范型方法"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "private <T> void set(T t) {\n  System.out.println(t);\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">java运行时无法捕获ClassCastException的解决办法</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": " private static <T> T get(Object o, T def) {\n   try {\n     return (T) def.getClass().cast(o);\n   } catch (Throwable e) {\n     return (T) def;\n   }\n }"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\"><font face=\"Menlo\" color=\"#929292\">通过查看字节码就可以了解,直接 return (T) value 是在方法外检测cast</font></span>"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">可变参数方法的反射</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public static void me(Object ... objects){\n    for (Object object : objects) {\n        System.out.println(object);\n    }\n}\n@Test\npublic void  test() throws Exception {\n    Class clazz = this.getClass();\n    //Method method = clazz.getMethod(\"me\",(new Object[0]).getClass());\n    //Method method = clazz.getMethod(\"me\",Array.newInstance(Object.class,0).getClass());\n    Method method = clazz.getMethod(\"me\",Class.forName(\"[Ljava.lang.Object;\"));\n    //1\n    Object objs = Array.newInstance(object.class,2);\n    Array.set(objs,0,1);\n    Array.set(objs,1,\"test\");\n    method.invoke(clazz,objs);\n    //2\n    Object[] obj = {1,\"test\"}\n    method.invoke(clazz,new Object[]{obj});\n}"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\"><font face=\"Menlo\">可变参数不可直接显式使用null作为参数</font></span>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public class TestStatic {\n    public static void main(String[] args) {\n        String s = null;\n        m1(s);\n        Util.log(\"begin null\");\n        m1(null);\n    }\n\n    private static void m1(String... strs) {\n        System.out.println(strs.length);\n    }\n\n}\n\n0: aconst_null          //将null压入操作栈\n1: astore_1\t\t\t\t      //弹出栈顶(null)存储到本地变量1\n2: iconst_1\t\t\t\t      //压栈1此时已经到方法m1了，在初始化参数，此值作为数组长度\n3: anewarray     #2     //新建数组            // class java/lang/String\n6: dup\t\t\t\t\t        //复制数组指针引用\n7: iconst_0\t\t\t      \t//压栈0，作为数组0角标\n8: aload_1\t\t\t      \t//取本地变量1值压栈，作为数组0的值\n9: aastore\t\t\t      \t//根据栈顶的引用型数值（value）、数组下\n     \t\t\t\t\t          //标（index）、数组引用（arrayref）出\n\t\t\t           \t      //栈，将数值存入对应的数组元素中\n10: invokestatic  #3    //此时实际传递的是一个数组，只是0位置为null的元素 Method m1:([Ljava/lang/String;)V\n13: iconst_1\n14: anewarray     #4    //class java/lang/Object\n17: dup\n18: iconst_0\n19: ldc           #5    //String begin null\n1: aastore\n22: invokestatic  #6    //Method li/Util.log:([Ljava/lang/Object;)V\n25: aconst_null \t    \t//此处并没有新建数组操作，直接压栈null\n26: invokestatic  #3    //此处一定会抛出空指针  Method m1:([Ljava/lang/String;)V\n29: return"
+    }
+  ]
+}

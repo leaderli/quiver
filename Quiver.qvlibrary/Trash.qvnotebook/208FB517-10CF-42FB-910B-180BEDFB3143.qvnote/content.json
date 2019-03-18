@@ -1,0 +1,23 @@
+{
+  "title": "snapshot",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\"><b>JS读取上传文件</b></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//js 读取文件\nfunction read(files){\n    if(files.length){\n        var file = files[0]\n        var reader = new FileReader()\n        if(/text/.test(file.type)){ //判断文件类型\n            reader.onload - function(){\n                $(\"show\").append('<pre>'+this.result+'</pre>')\n            }\n            reader.readAsText(file)\n        }else{\n            $(\"show\").append('<pre>格式错误</pre>')\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><b><span lang=\"zh-CN\">JS</span><span lang=\"en-US\">正则获取所有匹配组</span></b></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var re = /\\s*([^[:]+):\\\"([^\"]+)/g\nvar s = '[description:\"aoeu\" uuid:\"123sth\"]'\nvar m \ndo {\n    m = re.exec(s)\n    if(m){\n        console.log(m[1],m[2])\n    }\n}while(m)"
+    }
+  ]
+}

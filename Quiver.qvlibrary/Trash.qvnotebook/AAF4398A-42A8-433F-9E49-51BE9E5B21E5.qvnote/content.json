@@ -1,0 +1,9 @@
+{
+  "title": "chrome",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><div style=\"font-size: 17px;\"><font face=\"Menlo\"><b>截图</b></font></div><ol><li><font face=\"Menlo\">进入开发者模式 <font color=\"#941100\"><b>F12</b></font><br></font></li><li><font face=\"Menlo\">command+shift+p&nbsp;<br></font></li><li><font face=\"Menlo\">输入capture</font><br></li></ol></div>"
+    }
+  ]
+}

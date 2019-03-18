@@ -1,0 +1,14 @@
+{
+  "title": "dom4j",
+  "cells": [
+    {
+      "type": "text",
+      "data": "直接截取dom元素的值"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "    System.out.println(doc.selectObject(\"substring(/root/name/text(),2)\"));"
+    }
+  ]
+}

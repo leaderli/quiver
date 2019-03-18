@@ -1,0 +1,19 @@
+{
+  "title": "指定profile",
+  "cells": [
+    {
+      "type": "code",
+      "language": "java",
+      "data": "private AnnotationConfigApplicationContext context;\n\nSpring() {\n  context = new AnnotationConfigApplicationContext();\n  context.getEnvironment().setActiveProfiles(\"uat\");\n  context.scan(\"com.sip\");\n  context.refresh();\n}"
+    },
+    {
+      "type": "text",
+      "data": "激活的profile的bean会被实例化"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Service\n@Profile(\"uat\")\npublic class Announce {\n｝"
+    }
+  ]
+}
