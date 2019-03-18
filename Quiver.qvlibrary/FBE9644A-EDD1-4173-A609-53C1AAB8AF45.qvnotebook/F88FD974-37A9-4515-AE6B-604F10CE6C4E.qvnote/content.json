@@ -1,0 +1,23 @@
+{
+  "title": "配置",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\">日志log</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "yaml",
+      "data": "logging:\n  file: trace.log\n  level:\n    org:\n      springframework:\n        web: debug"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\">springboot加载xml配置</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;\nimport org.springframework.context.annotation.Import;\nimport org.springframework.context.annotation.ImportResource;\n\n@SpringBootApplication\n@ImportResource(\"classpath:spring.xml\")\npublic class LiApplication {\n public static void main(String[] args) {\n  SpringApplication.run(LiApplication.class, args);\n }\n}"
+    }
+  ]
+}

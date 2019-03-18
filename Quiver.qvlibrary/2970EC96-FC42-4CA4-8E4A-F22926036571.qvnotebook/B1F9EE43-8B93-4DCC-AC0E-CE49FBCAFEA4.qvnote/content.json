@@ -1,0 +1,9 @@
+{
+  "title": "algorithms",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div style=\"font-size: 15px;\"><font face=\"Menlo\"><span style=\"font-size: 16px;\"><b>二叉树遍历算法</b></span></font></div><div><ol><li><span style=\"font-size: 14px; font-family: Menlo;\">先序遍历</span><br></li><ol><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#919191\">访问根结点；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#919191\">遍历左子树；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#919191\">遍历右子树。</font></span></li></ol><li><span style=\"font-size: 14px; font-family: Menlo;\">中序遍历</span><br></li><ol><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">遍历左子树；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">访问根结点；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">遍历右子树</font>。</span></li></ol><li><span style=\"font-size: 14px; font-family: Menlo;\">后序遍历</span><br></li><ol><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">遍历左子树；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">遍历右子树；</font></span></li><li><span style=\"font-size: 14px; font-family: Menlo;\"><font color=\"#797979\">访问根结点。</font></span></li></ol></ol></div>"
+    }
+  ]
+}

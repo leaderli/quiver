@@ -1,0 +1,22 @@
+{
+  "title": "log4j",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<table class=\"src\" style=\"border: 1px solid silver; word-break: break-word; color: rgb(35, 35, 35); font-family: Verdana, Arial, helvetica, sans-seriff;\"><tbody><tr><th style=\"background-color: rgb(250, 250, 250); border-color: silver; border-collapse: collapse; padding: 8px 14px;\">Level</th><th style=\"background-color: rgb(250, 250, 250); border-color: silver; border-collapse: collapse; padding: 8px 14px;\">描述</th></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">ALL</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">各级包括自定义级别</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">DEBUG</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">指定细粒度信息事件是最有用的应用程序调试</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">ERROR</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">错误事件可能仍然允许应用程序继续运行</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">FATAL</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">指定非常严重的错误事件，这可能导致应用程序中止</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">INFO</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">指定能够突出在粗粒度级别的应用程序运行情况的信息的消息</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">OFF</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">这是最高等级，为了关闭日志记录</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">TRACE</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">指定细粒度比DEBUG更低的信息事件</td></tr><tr><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">WARN</td><td style=\"border-color: silver; border-collapse: collapse; padding: 8px 14px;\">指定具有潜在危害的情况<br><br></td></tr></tbody></table>"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(35, 35, 35); font-family: Verdana, Arial, helvetica, sans-seriff; background-color: rgb(255, 255, 255);\">级别p的级别使用q，在记录日志请求时，如果p&gt;=q启用。这条规则是log4j的核心。它假设级别是有序的。对于标准级别它们关系如下：</span><div><span style=\"font-family: Verdana, Arial, helvetica, sans-seriff; background-color: rgb(255, 255, 255);\"><font color=\"#ff9300\">ALL &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; OFF</font></span><span style=\"color: rgb(35, 35, 35); font-family: Verdana, Arial, helvetica, sans-seriff; background-color: rgb(255, 255, 255);\">。</span></div>"
+    },
+    {
+      "type": "text",
+      "data": "打印object的详细信息,可以先转成json再输出打印"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "log.info(JSONObject.toJSON(obj).toString());"
+    }
+  ]
+}

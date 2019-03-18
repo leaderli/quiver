@@ -1,0 +1,9 @@
+{
+  "title": "bean",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\"><font color=\"#00be00\">@Bean</font>&nbsp;工程方法注解，<font color=\"#ff2600\">默认以方法名为id</font></font>"
+    }
+  ]
+}

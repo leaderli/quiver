@@ -1,0 +1,23 @@
+{
+  "title": "动态注入bean 与依赖加载",
+  "cells": [
+    {
+      "type": "text",
+      "data": "动态注入bean <font color=\"#ff2600\">要考虑bean id冲突的问题</font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.beans.factory.support.BeanDefinitionBuilder;\nimport org.springframework.beans.factory.support.DefaultListableBeanFactory;\nimport org.springframework.context.ApplicationContext;\nimport org.springframework.context.annotation.Lazy;\nimport org.springframework.stereotype.Component;\n\nimport javax.annotation.PostConstruct;\n\n@Component(\"DynamicBean\")\n@Lazy\npublic class DynamicBean {\n  @Autowired\n  ApplicationContext context;\n\n  @PostConstruct\n  public void init() {\n    BeanDefinitionBuilder builder = BeanDefinitionBuilder.rootBeanDefinition(Person.class).addConstructorArgValue(\"person\").addConstructorArgValue(18);\n    DefaultListableBeanFactory factory = (DefaultListableBeanFactory) context.getAutowireCapableBeanFactory();\n    factory.registerBeanDefinition(\"person\", builder.getBeanDefinition());\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "依赖加载 在加载当前bean前需要先加载其他bean"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@DependsOn(\"DynamicBean\")\npublic class Simple {\n}"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "yaml",
+  "cells": [
+    {
+      "type": "text",
+      "data": "key含有.的解决版本"
+    },
+    {
+      "type": "code",
+      "language": "yaml",
+      "data": "map: \n  \"[config.name]\": hello"
+    },
+    {
+      "type": "text",
+      "data": "<font color=\"#00be00\">on</font>,<font color=\"#941100\">off</font> 会被默认为boolean类型,若需要的是字符串，显示声明"
+    }
+  ]
+}

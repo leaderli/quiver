@@ -1,0 +1,10 @@
+{
+  "title": "读取properties 中文乱码解决",
+  "cells": [
+    {
+      "type": "code",
+      "language": "java",
+      "data": "properties.load(new InputStreamReader(AutoConfig.class.getResourceAsStream(\"/application.properties\"),\"utf-8\"));"
+    }
+  ]
+}

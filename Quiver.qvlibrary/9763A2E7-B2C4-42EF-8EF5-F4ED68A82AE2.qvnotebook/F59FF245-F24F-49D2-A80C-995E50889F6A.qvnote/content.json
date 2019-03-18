@@ -1,0 +1,9 @@
+{
+  "title": "brew",
+  "cells": [
+    {
+      "type": "text",
+      "data": "brew info 查看安装失败相关信息"
+    }
+  ]
+}

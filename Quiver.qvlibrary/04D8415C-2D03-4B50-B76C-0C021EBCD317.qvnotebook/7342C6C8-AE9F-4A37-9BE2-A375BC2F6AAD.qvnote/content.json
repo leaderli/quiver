@@ -1,0 +1,13 @@
+{
+  "title": "avaya",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:10.2006in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:10.2006in\">\n\n<p style=\"margin-top: 22pt; margin-bottom: 0pt; font-size: 12pt;\"><font face=\"Menlo\"><span style=\"font-weight: bold; color: rgb(192, 0, 0); background-color: white;\" lang=\"en-US\">EPM</span><span style=\"background-color: white;\" lang=\"zh-CN\">\n是配置管理应用，运行于tomcat之上，不存在主备系统。</span></font></p>\n\n<p style=\"margin: 0in; font-size: 12pt;\"><span style=\"background:white\"><font face=\"Menlo\">针对于交行信用卡中心，只存在上海，武汉两套系统，共计两个应用。</font></span></p>\n\n<ol type=\"1\" style=\"margin-left: 0.375in; direction: ltr; unicode-bidi: embed; margin-top: 0in; margin-bottom: 0in; font-size: 11pt;\">\n <li value=\"1\" style=\"margin-top:0;margin-bottom:0;vertical-align:middle;\n     color:#3F3F3F\"><span style=\"font-size: 11pt; background-color: white;\"><font face=\"Menlo\">客户拨打400-800-9888进入上海或武汉的EPM是由运营商分配的，若上海或武汉系统宕机，只能由运营商手动切换规则。</font></span></li>\n <li style=\"margin-top:0;margin-bottom:0;vertical-align:middle;color:#3F3F3F\"><span style=\"font-size: 11pt; background-color: white; background-position: initial initial; background-repeat: initial initial;\"><font face=\"Menlo\">若由总行转信用卡，则必定进入上海的EPM</font></span></li>\n</ol>\n\n<p style=\"margin: 0in; font-size: 12pt;\" lang=\"zh-CN\"><font face=\"Menlo\"><span style=\"font-weight:bold;color:#C00000;background:white\">MPP</span><span style=\"background-color: white; background-position: initial initial; background-repeat: initial initial;\">系统，同时存在多个应用且是负载均衡的。交行信用卡中心共有3000个MRCP通道，对应3000个端口号，属于licence层面上的最大通道限制，是在软件层面上手动限制的。一通电话进线，占用一个通道，直到挂机才会释放该通道。外呼客户建立连接时即占用通道，所有外呼客户时一定要注意释放通道。</span></font></p>\n\n<p style=\"margin: 0in; font-size: 12pt;\"><font face=\"Menlo\"><span style=\"font-weight: bold; color: rgb(192, 0, 0); background-color: white;\" lang=\"en-US\">ASR</span><span style=\"font-weight: bold; background-color: white;\" lang=\"en-US\">，</span><span style=\"font-weight: bold; color: rgb(192, 0, 0); background-color: white;\" lang=\"en-US\">TTS</span><span style=\"background-color: white;\" lang=\"zh-CN\">引擎服务\nlicence是使用的时候才会去占用，和电话进线没有关系。只需要考虑并发量，设置最优通道即可。</span></font></p>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"quiver-file-url/5001E2E0BE9B2B7E5346AB5974ECB5D5.pdf\">VovceXML语音应用程序开发.pdf</a>"
+    }
+  ]
+}

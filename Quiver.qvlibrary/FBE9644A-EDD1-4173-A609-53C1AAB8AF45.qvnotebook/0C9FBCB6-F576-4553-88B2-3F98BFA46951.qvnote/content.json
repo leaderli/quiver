@@ -1,0 +1,37 @@
+{
+  "title": "properties,yaml注入bean",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">通过properties</font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.boot.context.properties.ConfigurationProperties;\nimport org.springframework.context.annotation.PropertySource;\nimport org.springframework.stereotype.Component;\n\nimport java.util.List;\nimport java.util.Map;\n\n@Component\n@PropertySource(\"classpath:config.properties\")\n@ConfigurationProperties\npublic class PropertyConfig {\n\n  private int inte;\n  private List<Integer> list;\n  private Map<String, String> map;\n  private String str;\n\n  public int getInte() {\n    return inte;\n  }\n\n  public void setInte(int inte) {\n    this.inte = inte;\n  }\n\n  public List<Integer> getList() {\n    return list;\n  }\n\n  public void setList(List<Integer> list) {\n    this.list = list;\n  }\n\n  public Map<String, String> getMap() {\n    return map;\n  }\n\n  public void setMap(Map<String, String> map) {\n    this.map = map;\n  }\n\n  public String getStr() {\n    return str;\n  }\n\n  public void setStr(String str) {\n    this.str = str;\n  }\n}\n"
+    },
+    {
+      "type": "code",
+      "language": "properties",
+      "data": "#config.properties\nlist[0]=1\nlist[1]=1\nmap.k1=v1\nmap.k2=v2\nstr:str\ninte:1"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\".SFNSText-Regular\">通过yaml文件的配置 则需要去springboot默认application.yml中使用prefix来加载</font></div>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Component\n@ConfigurationProperties(prefix = \"config\")\npublic class PropertyConfig {\n  ...\n} "
+    },
+    {
+      "type": "code",
+      "language": "yaml",
+      "data": "config:\n  list:\n    - 1\n    - 2\n  map:\n    k1: v1\n    k2: v2\n  str: s1\n  inte: 1"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

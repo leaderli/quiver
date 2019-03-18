@@ -1,0 +1,10 @@
+{
+  "title": "response",
+  "cells": [
+    {
+      "type": "code",
+      "language": "java",
+      "data": " @RequestMapping(\"/handle\")\n public ResponseEntity<String> handle() {\n   URI location = ...;\n   HttpHeaders responseHeaders = new HttpHeaders();\n   responseHeaders.setLocation(location);\n   responseHeaders.set(\"content-Type\", \"text/html;charset=utf-8\");\n   return new ResponseEntity<String>(\"Hello World\", responseHeaders, HttpStatus.CREATED);\n }"
+    }
+  ]
+}

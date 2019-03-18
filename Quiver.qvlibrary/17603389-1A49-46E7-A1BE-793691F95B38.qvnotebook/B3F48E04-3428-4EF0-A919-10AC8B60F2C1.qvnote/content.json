@@ -1,0 +1,45 @@
+{
+  "title": "异步请求",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><b><span style=\"font-size: 17px;\">SSE</span><span style=\"font-family: Menlo;\"><br></span></b></p><p style=\"margin: 0in;\" lang=\"zh-CN\"><span style=\"font-family: Menlo;\">服务器向浏览器推送数据</span><br></p>\n\n<p style=\"margin: 0in; color: rgb(174, 171, 171);\" lang=\"zh-CN\"><font face=\"Menlo\">较新版本浏览器支持</font></p>\n\n<p style=\"margin: 0in; color: rgb(174, 171, 171);\"></p>\n\n<p style=\"margin: 0in; color: rgb(83, 129, 53);\"><font face=\"Menlo\">媒体类型:\n'text/event-stream'</font></p>\n\n<p style=\"margin: 0in; color: rgb(83, 129, 53);\"><font face=\"Menlo\">返回类型严格按照格式\ndata里可以是json</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@ResponseBody\n@RequestMapping(value = \"/random\", produces = \"text/event-stream\")\npublic String random() {\n  Random random = new Random();\n  int next = random.nextInt();\n  ThreadUtil.sleep(5);\n  return \"data:Testing \" + next + \"\\n\\n\";\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in; color: rgb(174, 171, 171);\" lang=\"zh-CN\"><font face=\"Menlo\">前端js处理</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "if(!! window.EventSource){\n  var source = new EventSource(\"random\")\n  s = '';\n  source.addEventListener('message',function (e) {\n    s+= e.data+\"<br/>\"\n    $(\"#show\").html(s)\n  })\n  source.addEventListener('open',function (e) {\n    console.log('open')\n  },false)\n  source.addEventListener('error',function (e) {\n    if(e.readyState == EventSource.CLOSE){\n      console.log(\"connect is close\");\n    }else{\n      console.log(e.readyState);\n    }\n  },false)\n}else{\n  console.log('not support SSE')\n}"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(0, 0, 0); font-family: Menlo; background-color: rgb(255, 255, 255);\"><b>DeferredResult</b></span>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "@RequestMapping(\"/deferr\")\npublic DeferredResult<String> deferr() {\n  result = new DeferredResult<String>();\n  return result;\n}"
+    },
+    {
+      "type": "text",
+      "data": "当调用下述方法时，才会返回实际messeage"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "result.setResult(\"hello\");"
+    },
+    {
+      "type": "text",
+      "data": "一个DeferredResult实例,仅能处理一通会话，不可重复使用"
+    }
+  ]
+}

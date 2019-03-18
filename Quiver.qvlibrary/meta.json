@@ -1,0 +1,26 @@
+{
+  "uuid" : "Notebooks",
+  "children" : [
+    {
+      "uuid" : "77A35EDD-9CB5-4C56-9DBF-5326E5D081CE"
+    },
+    {
+      "uuid" : "2970EC96-FC42-4CA4-8E4A-F22926036571"
+    },
+    {
+      "uuid" : "04D8415C-2D03-4B50-B76C-0C021EBCD317"
+    },
+    {
+      "uuid" : "C09BEFCD-262A-473A-B5AC-ECE992EA40DC"
+    },
+    {
+      "uuid" : "17603389-1A49-46E7-A1BE-793691F95B38"
+    },
+    {
+      "uuid" : "FBE9644A-EDD1-4173-A609-53C1AAB8AF45"
+    },
+    {
+      "uuid" : "9763A2E7-B2C4-42EF-8EF5-F4ED68A82AE2"
+    }
+  ]
+}

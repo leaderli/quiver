@@ -1,0 +1,27 @@
+{
+  "title": "git",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "工作区指当前操作目录\n缓存区指git add后的区\n版本库指git版本控制的区\nHEAD指向的是当前分支，默认分支是master"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "git add  \t\t\t\t        \t  #添加到仓库\ngit branch -d dev\t\t    \t  #删除分支\tgbd\ngit checkout -- readme.txt  #丢弃工作区的修改\ngit checkout -b dev\t\t\t    #创建并切换 gcb\ngit checkout master\t\t    \t#切换到master版本 gcm\ngit commit -m \"messeage\"  \t#提交到仓库\ngit difftool\t\t\t\t        #使用ksdiff工具\ngit init \t\t\t\t\t          #把当前目录变成git可以管理的仓库\ngit log   \t\t\t\t\t        #查看提交历史\ngit merge dev\t\t\t          #合并dev分支\ngit reflog \t\t\t\t          #记录命令历史\ngit reset\t\t\t\t           \t#回退版本\ngit reset --hard HEAD^      #回退到上一个版本\ngit reset HEAD readme.txt   #撤回缓存区的修改\ngit rm readme.txt\t\t\t      #删除版本库文件 \ngit stash \t\t\t\t\t        #暂存当前工作区 \ngit stash list\t\t\t\t      #查看stash纪录 gstl\ngit stash pop\t\t\t\t        #弹出stash内容 gstp\ngit status  \t\t\t\t        #查看当前工作区状态\ngit log --pretty=oneline\t\t\t\t\t\t\ngit log --graph --pretty=oneline --abbrev-commit   #有图形 glol\ngit merge --no-ff -m \"merge with no-ff\" dev        #合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。"
+    },
+    {
+      "type": "markdown",
+      "data": ""
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "data": "git@github.com:leaderli/git.git"
+    },
+    {
+      "type": "markdown",
+      "data": "\n"
+    }
+  ]
+}

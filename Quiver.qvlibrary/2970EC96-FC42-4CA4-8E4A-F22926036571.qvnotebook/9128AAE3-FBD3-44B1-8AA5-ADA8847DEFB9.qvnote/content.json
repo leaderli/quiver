@@ -1,0 +1,63 @@
+{
+  "title": "mysql",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin:0in;font-family:&quot;Microsoft YaHei&quot;;font-size:14.0pt;color:white\" lang=\"zh-CN\"><span style=\"background:red;mso-highlight:red\">数据库直接操作时养成习惯不管干啥都先敲个begin;\n确认没问题了再commit;</span></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "设定字段为一个枚举"
+    },
+    {
+      "type": "code",
+      "language": "mysql",
+      "data": "create table person (\n  sex enum ('男','女')\n)"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 14px;\">表字段可以设置默认值，当未插入数据时用默认值</span></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "mysql",
+      "data": "CREATE TABLE test(\n  id INT(11) AUTO_INCREMENT, \n  name VARCHAR(25), \n  deptld INT(11) DEFAULT 1234,\n  salary FLOAT , \n  PRIMARY KEY (id)\n)"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 14px;\">mysql\n如何得到一条记录在所有记录的第几行</span></font></p>\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in; color: rgb(83, 129, 53); font-size: 12px;\"><font face=\"Menlo\"><span style=\"font-size: 13px;\">mysql本身是没有行号的。要想得到查询语句返回的列中包含一列表示该行记录在整个结果集中的行号可以通过自定义set一个变量</span></font></p>\n\n<p style=\"margin: 0in; color: rgb(83, 129, 53); font-size: 12px;\"><font face=\"Menlo\"><span style=\"font-size: 13px;\">然后每条记录+1的方式，返回这个变量的值。</span></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "mysql",
+      "data": "set @t = 0;\nselect * from (select (@t:=@t+1) as id ,s from t1 ) as A where a.id or a.id = 5"
+    },
+    {
+      "type": "text",
+      "data": "更改编码"
+    },
+    {
+      "type": "code",
+      "language": "mysql",
+      "data": "status #查看编码\nalter database db_name character set utf8"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-size: 14px;\"><span lang=\"en-US\">查看数据库信息</span><span lang=\"zh-CN\">，查看数据库编码</span></span></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "mysql",
+      "data": "show variables;\nshow variables like 'character';"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">从dump文件中恢复数据</font>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mysqldump -uroot -ppwd [database] > [dump file]"
+    }
+  ]
+}

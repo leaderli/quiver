@@ -1,0 +1,27 @@
+{
+  "title": "ajax 返回中文字符请求乱码,有双引号",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\"><span lang=\"en-US\">方法1:对于需要返回字符串的方法添加注解，</span><span lang=\"en-US\">此方法只针对单个调用方法起作用</span><span lang=\"zh-CN\">。</span><span lang=\"en-US\">如下：</span></font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@ResponseBody\n@RequestMapping(value = \"/load\", produces = \"text/html;charset=utf-8\")\npublic Object load() {\n  return \"测试中文返回\";\n}"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">方法2:在配置文件中加入</font>"
+    },
+    {
+      "type": "code",
+      "language": "xml",
+      "data": "<mvc:annotation-driven>\n    <mvc:message-converters>\n        <bean class=\"org.springframework.http.converter.StringHttpMessageConverter\">\n          <property name=\"supportedMediaTypes\" value=\"text/html;charset=UTF-8\"/>\n        </bean>\n    </mvc:message-converters>\n</mvc:annotation-driven>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

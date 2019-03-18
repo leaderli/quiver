@@ -1,0 +1,23 @@
+{
+  "title": "ConditionalOnProperty",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">当配置文件中 <font color=\"#009051\">config.name=on</font> 时则注入bean</font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Component\n@ConditionalOnProperty(prefix=\"config\",name=\"name\",havingValue=\"on\")\npublic class Bean {\n}\n\n@Bean\n@ConditionalOnProperty(prefix=\"config\",name=\"name\",havingValue=\"on\")\npublic String getBean(){\n  return \"test\";\n}"
+    },
+    {
+      "type": "text",
+      "data": "<font face=\"Menlo\">当配置文件存在配置<span style=\"color: rgb(0, 144, 81);\">config.name</span><font color=\"#000000\">时注入bean</font></font>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Component\n@ConditionalOnProperty(prefix=\"config\",name=\"name\")\npublic class Bean {\n}"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "class",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font color=\"#ff2600\">多个项目如果使用的是同一路径下的jar或class文件，则不同项目之间使用的是同一Class对象，Class对象的静态成员是共享的</font>"
+    }
+  ]
+}

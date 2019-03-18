@@ -1,0 +1,39 @@
+{
+  "title": "profile and conditional",
+  "cells": [
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\"><span style=\"color: olive; background-color: white;\">@ActiveProfiles</span><span style=\"color: black; background-color: white;\">({</span><span style=\"font-weight: bold; color: green; background-color: white;\">\"uat\"</span><span style=\"color: black; background-color: white;\">})</span></font></p><p style=\"margin: 0in;\" lang=\"zh-CN\">\n\n\n\n\n\n<!--StartFragment-->\n\n\n\n<!--EndFragment--></p><p style=\"margin: 0in;\" lang=\"zh-CN\"><font face=\"Menlo\" color=\"#a9a9a9\"><span style=\"background-color: white;\">仅用于</span><span style=\"background-color: white;\">junit</span><span style=\"background-color: white;\">模拟测试profile</span></font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n\n<p style=\"margin: 0in;\"><!--StartFragment--><font face=\"Menlo\"><span lang=\"zh-CN\">通过继承</span><span lang=\"zh-CN\"><font color=\"#0096ff\">WebApplicationInitializer</font></span><span lang=\"zh-CN\">即可实现在加载</span><span lang=\"zh-CN\">spring</span><span lang=\"zh-CN\">上下文前加载配置文件</span><span lang=\"en-US\">(servlet3.0以上支持)</span></font><!--EndFragment--></p>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "package profile;\n\nimport org.springframework.web.WebApplicationInitializer;\nimport org.springframework.web.context.ContextLoaderListener;\nimport org.springframework.web.context.WebApplicationContext;\nimport org.springframework.web.context.support.GenericWebApplicationContext;\nimport org.springframework.web.filter.CharacterEncodingFilter;\nimport org.springframework.web.servlet.DispatcherServlet;\nimport org.springframework.web.util.IntrospectorCleanupListener;\n\nimport javax.servlet.FilterRegistration;\nimport javax.servlet.ServletContext;\nimport javax.servlet.ServletRegistration;\n\npublic class WebInitializer implements WebApplicationInitializer {\n  @Override\n  public void onStartup(ServletContext servletContext) {\n\n    WebApplicationContext ctx = new GenericWebApplicationContext(servletContext);\n    \n    servletContext.setInitParameter(\"spring.profiles.active\", \"uat\");\n    servletContext.setInitParameter(\"contextConfigLocation\", \"classpath:profile.xml\");\n\n    ServletRegistration.Dynamic dispactcher = servletContext.addServlet(\"dispactcher\", new DispatcherServlet(ctx));\n    dispactcher.addMapping(\"/\");\n    dispactcher.setLoadOnStartup(1);\n\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n\n<p style=\"margin: 0in;\"><!--StartFragment--><font face=\"Menlo\"><span style=\"font-weight: bold;\">Conditional</span><!--EndFragment--></font></p><p style=\"margin: 0in;\"><font face=\"Menlo\"><span style=\"font-weight: bold;\"></span></font></p>"
+    },
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0in;\"><font color=\"#009051\" style=\"font-family: Menlo;\"><span style=\"font-weight: bold;\">@</span>Conditional</font><span style=\"font-family: Menlo; color: rgb(213, 160, 2);\"> </span><span style=\"font-family: Menlo;\">可自由决定在某种条件下加载哪个bean</span><br></p>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Condition;\nimport org.springframework.context.annotation.ConditionContext;\nimport org.springframework.context.annotation.Conditional;\nimport org.springframework.core.type.AnnotatedTypeMetadata;\n\npublic class Local implements Condition {\n  @Override\n  public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {\n    return \"local\".equals(System.getenv(\"profile\"));\n  }\n}\n\n@Bean\n@Conditional(Local.class)\npublic String local(){\n  return \"local\";\n}"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">当Condition条件满足时才会实例化对象</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

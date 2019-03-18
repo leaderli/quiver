@@ -1,0 +1,45 @@
+{
+  "title": "run shutdown",
+  "cells": [
+    {
+      "type": "text",
+      "data": "后台运行springboot项目"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "nohup java -jar demo.jar &"
+    },
+    {
+      "type": "text",
+      "data": "指定参数"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "java -jar demo.jar --server.port=8888"
+    },
+    {
+      "type": "text",
+      "data": "关闭项目"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ps -ef|grep java  #找到springboot的 pid \nkill -9 pid"
+    },
+    {
+      "type": "text",
+      "data": "通过页面关闭"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "@Autowired\nApplicationContext context;\n@RequestMapping(\"/exit\")\npublic String exit(){\n  SpringApplication.exit(context);\n  return \"exit\";\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}
