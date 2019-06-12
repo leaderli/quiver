@@ -1,0 +1,10 @@
+{
+  "title": "mac上打开class文件",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "vim -b XXX.class\n:%!xxd"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "title": "generics",
+  "title": "泛型",
   "cells": [
     {
       "type": "text",
@@ -40,6 +40,15 @@
       "type": "code",
       "language": "java",
       "data": "public class TestStatic {\n    public static void main(String[] args) {\n        String s = null;\n        m1(s);\n        Util.log(\"begin null\");\n        m1(null);\n    }\n\n    private static void m1(String... strs) {\n        System.out.println(strs.length);\n    }\n\n}\n\n0: aconst_null          //将null压入操作栈\n1: astore_1\t\t\t\t      //弹出栈顶(null)存储到本地变量1\n2: iconst_1\t\t\t\t      //压栈1此时已经到方法m1了，在初始化参数，此值作为数组长度\n3: anewarray     #2     //新建数组            // class java/lang/String\n6: dup\t\t\t\t\t        //复制数组指针引用\n7: iconst_0\t\t\t      \t//压栈0，作为数组0角标\n8: aload_1\t\t\t      \t//取本地变量1值压栈，作为数组0的值\n9: aastore\t\t\t      \t//根据栈顶的引用型数值（value）、数组下\n     \t\t\t\t\t          //标（index）、数组引用（arrayref）出\n\t\t\t           \t      //栈，将数值存入对应的数组元素中\n10: invokestatic  #3    //此时实际传递的是一个数组，只是0位置为null的元素 Method m1:([Ljava/lang/String;)V\n13: iconst_1\n14: anewarray     #4    //class java/lang/Object\n17: dup\n18: iconst_0\n19: ldc           #5    //String begin null\n1: aastore\n22: invokestatic  #6    //Method li/Util.log:([Ljava/lang/Object;)V\n25: aconst_null \t    \t//此处并没有新建数组操作，直接压栈null\n26: invokestatic  #3    //此处一定会抛出空指针  Method m1:([Ljava/lang/String;)V\n29: return"
+    },
+    {
+      "type": "text",
+      "data": "泛型 extends super"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "//不管是extends或是super，只能使用在变量声明上，实际赋值的时候，一定是指定具体实现类的。\n\n//那么对于<? extends T>来说，具体的实现类的泛型A只是变量声明的泛型T的子类，如果以T进行插入时，是无法保证插入的class类型，一定是A，所以extends禁用插入动作\nList<Apple> apples = new ArrayList<Apple>();\nList<? extends Fruit> fruits = apples;\n// 对于<? super T>来说，具体的实现类的泛型A一定是变量声明的泛型T的父类，如果以T类型进入取值操作，无法保证取出的值一定是T类型，因为A一定是T的父类，所以插入的所有实例一定也是A的多态\n\nList<Fruit> fruits = new ArrayList<Fruit>();\nList<? super Apple> = fruits;"
     }
   ]
 }

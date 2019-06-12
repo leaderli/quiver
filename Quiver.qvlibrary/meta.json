@@ -1,5 +1,4 @@
 {
-  "uuid" : "Notebooks",
   "children" : [
     {
       "uuid" : "77A35EDD-9CB5-4C56-9DBF-5326E5D081CE"
@@ -21,6 +20,13 @@
     },
     {
       "uuid" : "9763A2E7-B2C4-42EF-8EF5-F4ED68A82AE2"
+    },
+    {
+      "uuid" : "31AA96C6-1BE8-4FD7-8A29-B138696D1AEA"
+    },
+    {
+      "uuid" : "F3EE8474-2D9E-4E83-BBF8-FF74E8E95F7C"
     }
-  ]
+  ],
+  "uuid" : "Notebooks"
 }

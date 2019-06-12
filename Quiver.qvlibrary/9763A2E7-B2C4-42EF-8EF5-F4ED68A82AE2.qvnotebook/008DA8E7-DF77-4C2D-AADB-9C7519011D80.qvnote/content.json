@@ -1,0 +1,235 @@
+{
+  "title": "linux commands",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls *.jar|xargs -I {} echo $j{}"
+    },
+    {
+      "type": "markdown",
+      "data": "**快速备份**"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mv http.conf{.bak,}\ncp httpd.conf{,.bak}"
+    },
+    {
+      "type": "text",
+      "data": "快速杀进程"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "kill $(ps aux | grep 'java' | awk '{print $2}')"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ps -ef|grep java|grep -v grep"
+    },
+    {
+      "type": "text",
+      "data": "bash的数组"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "a=(a b c)\necho ${a[2]} #b"
+    },
+    {
+      "type": "text",
+      "data": "bash 运算"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "let \"b=$a+2\"    \n##############################################################################\nlet \"b=a+2\"  #之所以用双引号，是因为在bash中的变量替换发生在双引号内，如果不用引号，bash会把它们解释为命令。 \n##############################################################################\n((b=a+2))    #这是最简单的一种形式。"
+    },
+    {
+      "type": "text",
+      "data": "<div class=\"cell text-cell\" style=\"padding-right: 0px; padding-left: 0px;\"><p lang=\"zh-CN\" style=\"margin: 0in;\"><font face=\"Menlo\">获取当前日期</font></p></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "dt=`date +'%Y-%m-%d'`\necho $dt"
+    },
+    {
+      "type": "text",
+      "data": "<div class=\"cell code-cell\" style=\"padding-right: 0px; padding-left: 0px; font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, source-code-pro, monospace; font-size: 12px;\"><span style=\"color: rgb(0, 0, 0); font-family: Menlo; font-size: 14px;\">命令可以作为参数传入shell脚本中</span><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "echo $1\necho $2\n$1 $2"
+    },
+    {
+      "type": "text",
+      "data": "<div class=\"cell code-cell\" style=\"padding-right: 0px; padding-left: 0px; font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, source-code-pro, monospace; font-size: 12px;\"><span style=\"font-family: Menlo; font-size: 14px;\">执行结果如下</span><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "sh test.sh echo fuck\necho\nfuck\nfuck"
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">使用**/来递归搜索&nbsp;<br></p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls -a **/*.log"
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">命令查看当前目录下所有文件夹的大小 -d 指深度，后面加一个数值</p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "du -d 1 -h  "
+    },
+    {
+      "type": "text",
+      "data": "<div>将输出的每一行加上行号。例如：'cat 1.txt | nl'，输出1.txt的文件并加上行号</div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "nl   "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in; font-size: 11pt;\"><font face=\"Menlo\"></font></p><p lang=\"zh-CN\" style=\"margin: 0in;\">将文件内容排序输出</p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "sort        "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">命令行笔记&nbsp; ~/.cheat/redis&nbsp;</p><p lang=\"zh-CN\" style=\"margin: 0in; font-size: 11pt;\"><font face=\"Menlo\"></font></p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "cheat                         "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">全局搜索文件</p><p lang=\"zh-CN\" style=\"margin: 0in; font-size: 11pt;\"><font face=\"Menlo\"></font></p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "locate   "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">查找以特定字符串开头的单词或行</p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "look           "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in;\">获取公网ip地址</p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl ifconfig.me   "
+    },
+    {
+      "type": "text",
+      "data": "<p lang=\"zh-CN\" style=\"margin: 0in; font-size: 11pt;\"><span style=\"color: rgb(165, 165, 165); font-family: Menlo; font-size: 11pt;\">按文件大小顺序显示</span><br><span style=\"font-family: Menlo; font-size: 11pt;\"></span></p>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls -LS"
+    },
+    {
+      "type": "text",
+      "data": "模拟json请求"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl -H \"Content-Type:application/json\" -X POST --data '{\"key\":\"value\"}' http://localhost:8080/"
+    },
+    {
+      "type": "text",
+      "data": "得到curl httpcode&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "response=$(curl --write-out %{http_code} --silent --output /dev/null servername)\necho $response"
+    },
+    {
+      "type": "text",
+      "data": "递归查找指定文件的制定内容，显示文件名行号内容"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "grep -rn 'stream' . --include='*.cpp'"
+    },
+    {
+      "type": "text",
+      "data": "批量反编译jar包"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "ls *.jar|xargs -I {} jadx {} -d src"
+    },
+    {
+      "type": "text",
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">导出jar包并生成自定义maven资源</font></p>\n\n<!--EndFragment-->"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mvn clean package \nmvn install:install-file -DgroupId=li -DartifactId=common -Dversion=1.1  -Dfile=/Users/li/java/workspace/common/target/common-1.1.jar -Dpackaging=jar "
+    },
+    {
+      "type": "text",
+      "data": "yaml key含有.的解决版本"
+    },
+    {
+      "type": "code",
+      "language": "yaml",
+      "data": "map: \n  \"[config.name]\": hello"
+    },
+    {
+      "type": "text",
+      "data": "<font color=\"#00be00\">on</font>,<font color=\"#941100\">off</font> 会被默认为boolean类型,若需要的是字符串，显示声明"
+    },
+    {
+      "type": "text",
+      "data": "dom4j 直接截取dom元素的值"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "   doc.selectObject(\"substring(/root/name/text(),2)\");"
+    },
+    {
+      "type": "text",
+      "data": "快速删除大文件"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "cat /dev/null > access.log"
+    }
+  ]
+}

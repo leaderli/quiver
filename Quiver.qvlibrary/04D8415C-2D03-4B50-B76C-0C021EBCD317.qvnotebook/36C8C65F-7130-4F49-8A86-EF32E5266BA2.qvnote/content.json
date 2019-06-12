@@ -4,6 +4,10 @@
     {
       "type": "text",
       "data": "command option 左键 &nbsp;查看抽象类"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(105, 105, 105); font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);\">File | Other Settings | Default Settings 可以设置全局设置</span>"
     }
   ]
 }

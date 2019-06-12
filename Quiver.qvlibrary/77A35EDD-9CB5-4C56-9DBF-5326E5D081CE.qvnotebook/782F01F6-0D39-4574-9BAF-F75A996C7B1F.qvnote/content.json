@@ -7,7 +7,7 @@
     },
     {
       "type": "text",
-      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">控制台(console)乱码</font></p>\n\n<p style=\"margin: 0in; color: rgb(112, 48, 160);\"><font face=\"Menlo\">java启动参数添加\n-Dfile.encoding=utf-8</font></p><p style=\"margin: 0in; color: rgb(112, 48, 160);\"><img src=\"quiver-image-url/A47524D72651C6BC20E8607FEB29D38E.jpg\" width=\"430\" height=\"282\"><font face=\"Menlo\"><br></font></p>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
+      "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<div style=\"direction:ltr;border-width:100%\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<div style=\"direction:ltr;margin-top:0in;margin-left:0in;width:3.402in\">\n\n<p style=\"margin: 0in;\"><font face=\"Menlo\">控制台(console)乱码</font></p>\n\n<p style=\"margin: 0in; color: rgb(112, 48, 160);\"><font face=\"Menlo\">java启动参数添加\n-Dfile.encoding=utf-8</font></p><p style=\"margin: 0in; color: rgb(112, 48, 160);\"><img src=\"quiver-image-url/A47524D72651C6BC20E8607FEB29D38E.jpg\" width=\"430\" height=\"282\"><font face=\"Menlo\"><br></font></p><p style=\"margin: 0in;\"><font color=\"#ff2600\">也可以直接配置IDE的java启动参数中</font></p>\n\n</div>\n\n</div>\n\n</div>\n\n<!--EndFragment-->"
     },
     {
       "type": "text",

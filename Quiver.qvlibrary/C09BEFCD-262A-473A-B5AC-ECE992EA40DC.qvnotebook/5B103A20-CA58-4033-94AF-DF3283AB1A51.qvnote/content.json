@@ -1,0 +1,14 @@
+{
+  "title": "this",
+  "cells": [
+    {
+      "type": "text",
+      "data": "通过函数创建的对象，默认会初始化this，并返回this"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function Foo() {\n  // 1- create a new object using the object literal var this = {};\n  // 2- add properties and methods\n  this.name = 'li';\n  this.say = function () {\n  };\n  // 3- return this;\n}"
+    }
+  ]
+}

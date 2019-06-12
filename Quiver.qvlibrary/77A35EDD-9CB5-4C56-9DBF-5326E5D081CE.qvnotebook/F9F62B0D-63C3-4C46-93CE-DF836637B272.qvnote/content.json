@@ -17,6 +17,15 @@
       "type": "code",
       "language": "java",
       "data": "log.info(JSONObject.toJSON(obj).toString());"
+    },
+    {
+      "type": "text",
+      "data": "log4j不重复打印日志"
+    },
+    {
+      "type": "code",
+      "language": "properties",
+      "data": "log4j.logger.myLogger=TRACE,myLogger\nlog4j.additivity.myLogger=false"
     }
   ]
 }

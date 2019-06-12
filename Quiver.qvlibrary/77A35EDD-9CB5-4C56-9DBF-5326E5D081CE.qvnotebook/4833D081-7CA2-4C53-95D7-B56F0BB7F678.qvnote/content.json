@@ -1,9 +1,22 @@
 {
-  "title": "class",
+  "title": "jvm",
   "cells": [
     {
       "type": "text",
-      "data": "<font color=\"#ff2600\">多个项目如果使用的是同一路径下的jar或class文件，则不同项目之间使用的是同一Class对象，Class对象的静态成员是共享的</font>"
+      "data": "类加载"
+    },
+    {
+      "type": "text",
+      "data": "tomcat下每个应用都会有一个基于应用的类加载器，即使多个应用包目录下的同一个jar包，也是不同的Class对象。<div><span style=\"color: rgb(255, 38, 0);\">多个项目如果使用的是同一路径下的jar或class文件，则不同项目之间使用的是同一Class对象，Class对象的静态成员是共享的</span><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "判断class是否是另一个class的接口或抽象类或父类"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public void test(){\n  System.out.println(String.class.isAssignableFrom(Object.class));//false\n  System.out.println(Object.class.isAssignableFrom(String.class));//true\n}"
     }
   ]
 }

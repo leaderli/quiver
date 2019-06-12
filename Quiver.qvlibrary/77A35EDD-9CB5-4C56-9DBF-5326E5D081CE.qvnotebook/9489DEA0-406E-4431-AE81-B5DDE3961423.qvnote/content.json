@@ -21,6 +21,15 @@
     },
     {
       "type": "text",
+      "data": "查看类是否为基本类型或包装类型"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "import org.apache.commons.lang3.ClassUtils;\nClassUtils.isPrimitiveOrWrapper(klass)"
+    },
+    {
+      "type": "text",
       "data": "\n\n\n\n\n\n<!--StartFragment-->\n\n<p style=\"margin: 0in;\"><span lang=\"zh-CN\">String</span><span lang=\"en-US\">\n替换 正则匹配组</span></p>\n\n<!--EndFragment-->"
     },
     {
@@ -63,6 +72,33 @@
       "type": "code",
       "language": "java",
       "data": "new Object(){}.getClass().getEncloseingMethod().getName();"
+    },
+    {
+      "type": "text",
+      "data": "读取properties 中文乱码解决"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "properties.load(new InputStreamReader(AutoConfig.class.getResourceAsStream(\"/application.properties\"),\"utf-8\"));"
+    },
+    {
+      "type": "text",
+      "data": "<div><span style=\"font-family: 'Microsoft YaHei'; background-color: rgb(255, 255, 255);\">对基本数据类型来说，对于类变量（static）和全局变量，如果不显式地对其赋值而直接使用，则系统会为其赋予默认的零值，可以根据这个特性，直接用静态类常量来获取基本变量的初始值。</span><br></div><img alt=\"\" src=\"quiver-image-url/12E96EB5BBAC8CCED40B076506AF19C2.jpg\" width=\"261\" height=\"323\">"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "public class Primitive {\n  public static int i; //默认值0\n  public static char c; //默认值'\\u0000'\n}"
+    },
+    {
+      "type": "text",
+      "data": "如何修改final修饰符的值"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "String str = \"fuck\";\n\nField value = String.class.getDeclaredField(\"value\");\n//Field中包含当前属性的修饰符，通过改变修饰符的final属性，达到重新赋值的功能\nField modifier = Field.class.getDeclaredField(\"modifiers\");\nmodifier.setAccessible(true);\nmodifier.set(value, value.getModifiers() & ~Modifier.FINAL);\n\nvalue.setAccessible(true);\nvalue.set(str, \"notfuck\".toCharArray());\n//修改成功后重新加上final修饰符\nmodifier.set(value, value.getModifiers() | Modifier.FINAL);}"
     }
   ]
 }

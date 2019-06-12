@@ -8,7 +8,7 @@
     {
       "type": "code",
       "language": "java",
-      "data": "@Configuration\npublic class Config implements WebMvcConfigurer {\n\n\n  //添加额外的MessageConverter\n  @Override\n  public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {\n    converters.add(new PersonMessageConverter());\n  }\n  //重载复写MessageConverters\n  @Override\n  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {\n    converters.add(new PersonMessageConverter());\n  }\n}"
+      "data": "@Configuration\n@EnableWebMvc\npublic class Config extends WebMvcConfigurerAdapter {\n\n\n  //添加额外的MessageConverter\n  @Override\n  public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {\n    converters.add(new PersonMessageConverter());\n  }\n}"
     },
     {
       "type": "text",

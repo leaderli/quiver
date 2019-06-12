@@ -18,6 +18,19 @@
       "type": "code",
       "language": "javascript",
       "data": "var re = /\\s*([^[:]+):\\\"([^\"]+)/g\nvar s = '[description:\"aoeu\" uuid:\"123sth\"]'\nvar m \ndo {\n    m = re.exec(s)\n    if(m){\n        console.log(m[1],m[2])\n    }\n}while(m)"
+    },
+    {
+      "type": "text",
+      "data": "<b>js动态加载js文件</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var node =document.createElement('script');\nnode.src='test.js';\n//js加载需要挂靠在dom上\ndocument.getElementById(\"test\").appendChild(node);\n//js加载需要时间，需要使用动态加载js的方法，用回调\nnode.addEventListener('load', function (e) {\n  console.log('is loaded')\n});"
+    },
+    {
+      "type": "text",
+      "data": ""
     }
   ]
 }
